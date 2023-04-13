@@ -7,11 +7,13 @@ import (
 	"os/signal"
 	"sync"
 	"syscall"
+	"time"
 )
 
 func worker(id int, in <-chan int) {
 	for n := range in {
 		fmt.Printf("Worker #%d prints: %d\n", id, n)
+		time.Sleep(time.Second)
 	}
 }
 

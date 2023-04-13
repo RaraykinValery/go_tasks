@@ -9,7 +9,7 @@ import (
 func main() {
 	ch := make(chan int)
 
-	ns := flag.Int("delay", 1, "delay in seconds")
+	ns := flag.Int("timeout", 1, "timeout in seconds")
 	flag.Parse()
 
 	go func() {

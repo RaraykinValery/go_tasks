@@ -6,21 +6,20 @@ import (
 )
 
 func main() {
-	a := big.NewInt(1)
-	b := big.NewInt(1)
+	var bi big.Int
 
-	a.SetString("10000000000", 10)
-	b.SetString("1000000000", 10)
+	a := big.NewInt(1 << 50)
+	b := big.NewInt(1 << 40)
 
-	c := new(big.Int).Add(a, b)
+	c := bi.Add(a, b)
 	fmt.Printf("%v + %v = %v\n", a, b, c)
 
-	c = new(big.Int).Sub(a, b)
+	c = bi.Sub(a, b)
 	fmt.Printf("%v - %v = %v\n", a, b, c)
 
-	c = new(big.Int).Mul(a, b)
+	c = bi.Mul(a, b)
 	fmt.Printf("%v * %v = %v\n", a, b, c)
 
-	c = new(big.Int).Div(a, b)
+	c = bi.Div(a, b)
 	fmt.Printf("%v / %v = %v\n", a, b, c)
 }

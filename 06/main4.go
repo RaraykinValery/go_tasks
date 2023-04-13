@@ -13,6 +13,7 @@ func main() {
 
 	wg.Add(1)
 
+	// Горутина будет работать до тех пор, пока глобальный флаг done имеет значение flase
 	go func() {
 		fmt.Println("Starting goroutine")
 

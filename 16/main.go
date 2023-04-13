@@ -1,16 +1,25 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+)
 
 func quicksort(array []int) []int {
 	if len(array) < 2 {
 		return array
 	} else {
-		pivot := array[0]
+		randIndex := rand.Intn(len(array))
+		pivot := array[randIndex]
+
 		var less []int
 		var greater []int
 
-		for _, v := range array[1:] {
+		for i, v := range array {
+			if i == randIndex {
+				continue
+			}
+
 			if v < pivot {
 				less = append(less, v)
 			} else {
